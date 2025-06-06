@@ -1,6 +1,3 @@
-/* ========================================================================= */
-/* 1. Estilos Gerais para o Corpo da Página (body) e Reset Básico */
-/* ========================================================================= */
 body {
     background-color: #f5f7fa;
     font-family: 'Open Sans', Arial, sans-serif;
@@ -14,9 +11,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* ========================================================================= */
-/* 2. Estilos para Títulos (h1, h2, etc.) */
-/* ========================================================================= */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', 'Segoe UI', sans-serif;
     color: #2c3e50;
@@ -40,9 +34,6 @@ h2 {
     font-weight: 600;
 }
 
-/* ========================================================================= */
-/* 3. Estilos para Parágrafos (p) */
-/* ========================================================================= */
 p {
     font-size: 1em;
     color: #555;
@@ -54,9 +45,6 @@ p {
     padding: 0 15px;
 }
 
-/* ========================================================================= */
-/* 4. Estilos para Links (a) - Global */
-/* ========================================================================= */
 a {
     color: #3498db;
     text-decoration: none;
@@ -69,23 +57,19 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ========================================================================= */
-/* 5. Estilos para o Cabeçalho (header) e Navegação (nav) com Flexbox */
-/* ========================================================================= */
 header {
     background-color: #14623f;
     color: white;
-    padding: 20px; /* Adicionado padding geral para os lados */
-    text-align: center; /* Mantido para centralizar o h1 em mobile se houver quebra */
+    padding: 20px; 
+    text-align: center; 
     margin-bottom: 30px;
 
-    /* Propriedades Flexbox para o cabeçalho */
-    display: flex; /* Transforma o header em um contêiner flex */
-    flex-wrap: wrap; /* Permite que os itens quebrem linha */
-    justify-content: space-between; /* Espaço entre o título e a navegação */
-    align-items: center; /* Alinha verticalmente no centro */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
 
-    position: sticky; /* ou fixed se preferir */
+    position: sticky; 
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -93,31 +77,30 @@ header {
 
 header h1 {
     color: white;
-    margin: 0; /* Remover margens padrão do h1 para controle total com flexbox */
-    padding: 0; /* Remover padding padrão do h1 */
-    font-size: 2em; /* Ajustar tamanho para o cabeçalho */
-    text-align: left; /* Alinhar título à esquerda no desktop */
-    flex-grow: 1; /* Permite que o título ocupe o espaço disponível */
-    padding-left: 10px; /* Pequeno padding à esquerda */
+    margin: 0; 
+    padding: 0; 
+    font-size: 2em; 
+    flex-grow: 1; 
+    padding-left: 10px; 
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Transforma a lista em um contêiner flex */
-    flex-wrap: wrap; /* Permite que os links quebrem linha */
-    justify-content: flex-end; /* Alinha os links à direita no desktop */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-end; 
     align-items: center;
 }
 
 nav ul li {
-    margin: 0 10px; /* Ajustar espaçamento entre os itens do menu */
+    margin: 0 10px; 
 }
 
 nav ul li a {
     color: white;
-    padding: 8px 12px; /* Ajustar padding para botões de navegação */
+    padding: 8px 12px; 
     border-radius: 5px;
     display: block;
     transition: background-color 0.3s ease;
@@ -133,56 +116,51 @@ nav ul li a:active {
     transform: scale(0.98);
 }
 
-/* Responsividade para o cabeçalho em mobile */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Título e navegação em coluna */
+        flex-direction: column; 
         padding: 15px 10px;
     }
     header h1 {
-        text-align: center; /* Centraliza o título em mobile */
-        margin-bottom: 15px; /* Espaço entre título e menu */
+        text-align: center; 
+        margin-bottom: 15px; 
     }
     nav ul {
-        justify-content: center; /* Centraliza os links em mobile */
+        justify-content: center; 
         width: 100%;
     }
     nav ul li {
-        margin: 5px 8px; /* Ajusta margem em mobile */
+        margin: 5px 8px; 
     }
 }
 
-/* Estilos para cabeçalhos de páginas que NÃO TEM a navegação global (ex: gerar.html) */
 .page-header-simple {
     display: flex;
-    flex-direction: column; /* Coloca logo e h1 um abaixo do outro */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente se houver espaço */
-    padding: 20px; /* Mantém o padding */
-    background-color: #14623f; /* Mesma cor de fundo do cabeçalho principal */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px; 
+    background-color: #14623f;
     color: white;
     margin-bottom: 30px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .page-header-simple .header-logo {
-    max-width: 80px; /* Ajuste o tamanho do logo aqui */
+    max-width: 80px; 
     height: auto;
-    margin-bottom: 15px; /* Espaço entre o logo e o título */
+    margin-bottom: 15px;
 }
 
 .page-header-simple h1 {
-    font-size: 2.5em; /* Ajuste o tamanho do h1 para este cabeçalho */
-    text-align: center; /* Centraliza o título */
+    font-size: 2.5em; 
+    text-align: center; 
     color: white;
     margin: 0;
     padding: 0;
-    border-bottom: none; /* Remove a borda inferior que o h1 global pode ter */
+    border-bottom: none; 
 }
 
-/* ========================================================================= */
-/* 6. Estilos para o Conteúdo Principal (main) e Seções */
-/* ========================================================================= */
 main {
     flex-grow: 1;
     max-width: 1200px;
@@ -204,9 +182,6 @@ section:last-child {
     margin-bottom: 0;
 }
 
-/* ========================================================================= */
-/* 7. Estilos para o Rodapé (footer) */
-/* ========================================================================= */
 footer {
     background-color: #2c3e50;
     color: white;
@@ -216,25 +191,21 @@ footer {
     width: 100%;
 }
 
-/* ========================================================================= */
-/* 8. Organização de Formulários (contato.html e gerar.html) com Flexbox */
-/* ========================================================================= */
 form {
     background-color: #fcfcfc;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    max-width: 700px; /* Largura máxima para o formulário */
-    margin: 40px auto; /* Centraliza o formulário */
-    display: block; /* Garante que o formulário ocupe sua própria linha */
+    max-width: 700px; 
+    margin: 40px auto; 
+    display: block; 
     position: relative;
 }
 
-/* Contêiner flexbox para alinhar os campos do formulário */
 .form-group {
     display: flex;
-    flex-direction: column; /* Campos um abaixo do outro */
-    margin-bottom: 20px; /* Espaçamento entre grupos de campos */
+    flex-direction: column; 
+    margin-bottom: 20px; 
 }
 
 form label {
@@ -246,12 +217,12 @@ form label {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%; /* Ocupa 100% do .form-group */
+    width: 100%; 
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    box-sizing: border-box; 
 }
 
 textarea {
@@ -269,8 +240,8 @@ button[type="submit"] {
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
-    display: block; /* Faz o botão ocupar sua própria linha */
-    margin: 20px auto 0; /* Centraliza o botão e adiciona margem superior */
+    display: block; 
+    margin: 20px auto 0; 
 }
 
 button[type="submit"]:hover {
@@ -284,7 +255,6 @@ button[type="submit"]:active {
     transform: translateY(1px);
 }
 
-/* Estilo para a imagem gerada (gerar.html) */
 img {
     max-width: 100%;
     height: auto;
@@ -295,9 +265,6 @@ img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================================================================= */
-/* 9. Estilos para Tabelas (index.html, galeria.html) */
-/* ========================================================================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -330,9 +297,6 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-/* ========================================================================= */
-/* 10. Organizar Elementos com position (Desafios) */
-/* ========================================================================= */
 .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -355,13 +319,10 @@ tr:hover {
     transform: translateY(-2px);
 }
 
-/* ========================================================================= */
-/* 11. Estilos para a Galeria de Imagens com Grid (galeria.html) */
-/* ========================================================================= */
 .gallery-grid {
-    display: grid; /* Ativa o Grid Container */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas responsivas */
-    gap: 25px; /* Espaço entre os itens da grid */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
     padding: 20px;
     max-width: 1200px;
     margin: 40px auto;
@@ -371,24 +332,24 @@ tr:hover {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Garante que a imagem arredondada não vaze */
+    overflow: hidden; 
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efeito de elevação no hover */
+    transform: translateY(-5px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens da galeria */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    display: block; /* Remove espaço extra abaixo da imagem */
-    margin: 0; /* Remove margens globais da imagem */
-    border-radius: 0; /* Remove borda/arredondamento globais se aplicarem */
-    box-shadow: none; /* Remove sombra global se aplicar */
+    height: 200px; 
+    object-fit: cover; /
+    display: block;
+    margin: 0; 
+    border-radius: 0; 
+    box-shadow: none; 
 }
 
 .card-text {
@@ -397,14 +358,12 @@ tr:hover {
     color: #666;
 }
 
-/* ========================================================================= */
-/* 12. Estilos para a Seção "Sobre" com Grid (sobre.html) */
-/* ========================================================================= */
+
 .about-section {
-    display: grid; /* Ativa o Grid Container */
-    grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
-    gap: 40px; /* Espaço entre as colunas */
-    align-items: center; /* Alinha verticalmente os itens no centro */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: center; 
     padding: 30px;
     max-width: 1000px;
     margin: 40px auto;
@@ -412,20 +371,19 @@ tr:hover {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
-    /* Responsividade para telas menores */
     @media (max-width: 768px) {
-        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        grid-template-columns: 1fr; 
         gap: 20px;
         padding: 20px;
     }
 }
 
 .about-text {
-    padding-right: 15px; /* Espaço à direita do texto */
+    padding-right: 15px; 
 }
 
 .about-image {
-    text-align: center; /* Centraliza a imagem */
+    text-align: center; 
 }
 
 .about-image img {
@@ -434,13 +392,9 @@ tr:hover {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 0 auto; /* Centraliza a imagem dentro da div */
+    margin: 0 auto; 
 }
 
-
-/* ========================================================================= */
-/* 13. Teste de display: none; */
-/* ========================================================================= */
 .hidden-element {
     display: none;
 }
