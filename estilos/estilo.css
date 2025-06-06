@@ -1,0 +1,446 @@
+/* ========================================================================= */
+/* 1. Estilos Gerais para o Corpo da Página (body) e Reset Básico */
+/* ========================================================================= */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* ========================================================================= */
+/* 2. Estilos para Títulos (h1, h2, etc.) */
+/* ========================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+/* ========================================================================= */
+/* 3. Estilos para Parágrafos (p) */
+/* ========================================================================= */
+p {
+    font-size: 1em;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 15px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+/* ========================================================================= */
+/* 4. Estilos para Links (a) - Global */
+/* ========================================================================= */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* ========================================================================= */
+/* 5. Estilos para o Cabeçalho (header) e Navegação (nav) com Flexbox */
+/* ========================================================================= */
+header {
+    background-color: #14623f;
+    color: white;
+    padding: 20px; /* Adicionado padding geral para os lados */
+    text-align: center; /* Mantido para centralizar o h1 em mobile se houver quebra */
+    margin-bottom: 30px;
+
+    /* Propriedades Flexbox para o cabeçalho */
+    display: flex; /* Transforma o header em um contêiner flex */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: space-between; /* Espaço entre o título e a navegação */
+    align-items: center; /* Alinha verticalmente no centro */
+
+    position: sticky; /* ou fixed se preferir */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: white;
+    margin: 0; /* Remover margens padrão do h1 para controle total com flexbox */
+    padding: 0; /* Remover padding padrão do h1 */
+    font-size: 2em; /* Ajustar tamanho para o cabeçalho */
+    text-align: left; /* Alinhar título à esquerda no desktop */
+    flex-grow: 1; /* Permite que o título ocupe o espaço disponível */
+    padding-left: 10px; /* Pequeno padding à esquerda */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Transforma a lista em um contêiner flex */
+    flex-wrap: wrap; /* Permite que os links quebrem linha */
+    justify-content: flex-end; /* Alinha os links à direita no desktop */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px; /* Ajustar espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: white;
+    padding: 8px 12px; /* Ajustar padding para botões de navegação */
+    border-radius: 5px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+nav ul li a:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0.98);
+}
+
+/* Responsividade para o cabeçalho em mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Título e navegação em coluna */
+        padding: 15px 10px;
+    }
+    header h1 {
+        text-align: center; /* Centraliza o título em mobile */
+        margin-bottom: 15px; /* Espaço entre título e menu */
+    }
+    nav ul {
+        justify-content: center; /* Centraliza os links em mobile */
+        width: 100%;
+    }
+    nav ul li {
+        margin: 5px 8px; /* Ajusta margem em mobile */
+    }
+}
+
+/* Estilos para cabeçalhos de páginas que NÃO TEM a navegação global (ex: gerar.html) */
+.page-header-simple {
+    display: flex;
+    flex-direction: column; /* Coloca logo e h1 um abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente se houver espaço */
+    padding: 20px; /* Mantém o padding */
+    background-color: #14623f; /* Mesma cor de fundo do cabeçalho principal */
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.page-header-simple .header-logo {
+    max-width: 80px; /* Ajuste o tamanho do logo aqui */
+    height: auto;
+    margin-bottom: 15px; /* Espaço entre o logo e o título */
+}
+
+.page-header-simple h1 {
+    font-size: 2.5em; /* Ajuste o tamanho do h1 para este cabeçalho */
+    text-align: center; /* Centraliza o título */
+    color: white;
+    margin: 0;
+    padding: 0;
+    border-bottom: none; /* Remove a borda inferior que o h1 global pode ter */
+}
+
+/* ========================================================================= */
+/* 6. Estilos para o Conteúdo Principal (main) e Seções */
+/* ========================================================================= */
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* ========================================================================= */
+/* 7. Estilos para o Rodapé (footer) */
+/* ========================================================================= */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ========================================================================= */
+/* 8. Organização de Formulários (contato.html e gerar.html) com Flexbox */
+/* ========================================================================= */
+form {
+    background-color: #fcfcfc;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 700px; /* Largura máxima para o formulário */
+    margin: 40px auto; /* Centraliza o formulário */
+    display: block; /* Garante que o formulário ocupe sua própria linha */
+    position: relative;
+}
+
+/* Contêiner flexbox para alinhar os campos do formulário */
+.form-group {
+    display: flex;
+    flex-direction: column; /* Campos um abaixo do outro */
+    margin-bottom: 20px; /* Espaçamento entre grupos de campos */
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ocupa 100% do .form-group */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    display: block; /* Faz o botão ocupar sua própria linha */
+    margin: 20px auto 0; /* Centraliza o botão e adiciona margem superior */
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+    background-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+/* Estilo para a imagem gerada (gerar.html) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================= */
+/* 9. Estilos para Tabelas (index.html, galeria.html) */
+/* ========================================================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #4a7d96;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ========================================================================= */
+/* 10. Organizar Elementos com position (Desafios) */
+/* ========================================================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* ========================================================================= */
+/* 11. Estilos para a Galeria de Imagens com Grid (galeria.html) */
+/* ========================================================================= */
+.gallery-grid {
+    display: grid; /* Ativa o Grid Container */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas responsivas */
+    gap: 25px; /* Espaço entre os itens da grid */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que a imagem arredondada não vaze */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens da galeria */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0; /* Remove margens globais da imagem */
+    border-radius: 0; /* Remove borda/arredondamento globais se aplicarem */
+    box-shadow: none; /* Remove sombra global se aplicar */
+}
+
+.card-text {
+    padding: 15px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* ========================================================================= */
+/* 12. Estilos para a Seção "Sobre" com Grid (sobre.html) */
+/* ========================================================================= */
+.about-section {
+    display: grid; /* Ativa o Grid Container */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
+    gap: 40px; /* Espaço entre as colunas */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    padding: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+.about-text {
+    padding-right: 15px; /* Espaço à direita do texto */
+}
+
+.about-image {
+    text-align: center; /* Centraliza a imagem */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem dentro da div */
+}
+
+
+/* ========================================================================= */
+/* 13. Teste de display: none; */
+/* ========================================================================= */
+.hidden-element {
+    display: none;
+}
